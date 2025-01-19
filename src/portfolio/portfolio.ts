@@ -1,4 +1,3 @@
-// src/portfolio/portfolio.ts
 export interface Asset {
   name: string;
   value: number;

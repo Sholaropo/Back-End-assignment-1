@@ -2,7 +2,6 @@ const request = require("supertest");
 const { app, server } = require("../app");
 
 describe("Health Check Endpoint", () => {
-  // Close the server after tests
   afterAll((done) => {
     server.close(() => {
       done();
@@ -10,7 +9,7 @@ describe("Health Check Endpoint", () => {
   });
 
   it("should return server health status", async () => {
-    const res = await request(app).get("/api/v1/health");
+    const res = await request(app).get("/api/v1/health"); 
 
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveProperty("status", "OK");
